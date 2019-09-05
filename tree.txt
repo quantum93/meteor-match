@@ -1,0 +1,14 @@
+Page
+ - header
+    - header picture
+    - header nav bar
+ - body
+    - description area
+       - Mission statement
+       - discription
+    - employee card
+       - picture
+       - name and title
+    - job opening link
+ - footer
+    - footer nav bar
