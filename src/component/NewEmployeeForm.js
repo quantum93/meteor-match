@@ -7,7 +7,7 @@ function NewEmployeeForm(props) {
 
   function handleNewEmployeeFormSubmission(event) {
     event.preventDefault();
-    props.onNewEmployeeCreation({names: _name.value, location: _title.value});
+    props.onNewEmployeeCreation({name: _name.value, title: _title.value});
     _name.value = '';
     _title.value = '';
 

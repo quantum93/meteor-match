@@ -17,7 +17,7 @@ export default function EmployeeCard(props) {
         <Card.Img variant="top" alt="employee picture" src={astroDude}/>
         <Card.Body>
         <Card.Title><h3>{props.name}</h3></Card.Title>
-        <Card.Text><h4>{props.title}</h4></Card.Text>
+        <Card.Text>{props.title}</Card.Text>
         </Card.Body>
       </Card>
     </div>

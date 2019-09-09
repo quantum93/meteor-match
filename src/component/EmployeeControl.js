@@ -20,7 +20,7 @@ class EmployeeControl extends React.Component {
   render() {
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewEmployeeForm onEmployeeCreation={this.props.onEmployeeCreation}/>;
+      currentlyVisibleContent = <NewEmployeeForm onNewEmployeeCreation={this.props.onNewEmployeeCreation}/>;
     } else {
       currentlyVisibleContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleshootingConfirmation}/>;
     }
