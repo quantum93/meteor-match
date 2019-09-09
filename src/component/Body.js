@@ -4,9 +4,29 @@ import UsersList from './UsersList.js'
 import JobLink from './JobLink.js'
 import { Switch, Route } from 'react-router-dom';
 import SignUp from './SignUp';
+import EmployeeControl from './EmployeeControl';
+import PropTypes from 'prop-types';
 
 
-export default function Body() {
+
+export default class Body extends React.Component {
+
+  constructor(props) {
+  super(props);
+  this.state = {
+    masterEmployeeList: []
+    };
+    this.handleAddingNewEmployeeToList = this.handleAddingNewEmployeeToList.bind(this);
+  }
+
+  handleAddingNewEmployeeToList(newEmployee){
+    var newMasterEmployeeList = this.state.masterEmployeeList.slice();
+    newMasterEmployeeList.push(newEmployee);
+    this.setState({masterEmployeeList: newMasterEmployeeList});
+  }
+
+render(props){
+
   var cardStyle = {
     textAlign: 'center',
     justifyContent: 'center',
@@ -19,7 +39,8 @@ export default function Body() {
     <div style={ cardStyle }>
     <Switch>
       <Route path='/users' component={UsersList} />
-      <Route path='/about_us' component={EmployeeList} />
+      <Route exact path='/about_us' render={()=><EmployeeList employeeList={this.state.masterEmployeeList} />} />
+      <Route path='/new_employee' render={()=><EmployeeControl onNewEmployeeCreation={this.handleAddingNewEmployeeToList} />} />
       <Route path='/sign_up' component={SignUp} />
     </Switch>
     </div>
@@ -27,3 +48,8 @@ export default function Body() {
     </div>
   );
 }
+}
+
+EmployeeList.propTypes = {
+  ticketList: PropTypes.array
+};
