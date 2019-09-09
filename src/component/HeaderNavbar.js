@@ -33,7 +33,7 @@ export default function HeaderNavbar() {
     <div style={navStyles}>
     <nav>
     <a href='/'><img alt='astro dude' src={astroDude} style={logoStyle}/></a>
-    <a style={aStyles} href='/'>Home</a>
+    <a style={aStyles} href='/'>Feed</a>
     <a style={aStyles} href='/'>Our Vision</a>
 
     <a style={signStyles} href='/'>Sign Up/In</a>
