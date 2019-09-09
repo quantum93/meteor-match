@@ -19,6 +19,8 @@ var masterUsersList = [
 export default function UsersList() {
   return (
     <div>
+    <h2>Find your match!</h2>
+
       {masterUsersList.map((user, index) =>
         <Users
         name={user.name}
